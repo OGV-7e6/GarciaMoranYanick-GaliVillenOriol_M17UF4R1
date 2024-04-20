@@ -7,7 +7,12 @@ public class EnemyController3 : StateController2
     public float AttackDistance;
     public float HP;
     private float nextHurt = 0;
+    public Navigation nav;
 
+    private void Start()
+    {
+        nav = GetComponent<Navigation>();
+    }
     void Update()
     {
         StateTransition();
@@ -31,5 +36,6 @@ public class EnemyController3 : StateController2
     private void OnTriggerExit(Collider collision)
     {
         target = null;
+        nav.UpdateDestination();
     }
 }

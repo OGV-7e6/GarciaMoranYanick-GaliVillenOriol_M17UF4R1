@@ -5,18 +5,37 @@ using UnityEngine.AI;
 
 public class Navigation : MonoBehaviour
 {
-    public Transform player;
     private NavMeshAgent agent;
-
-    // Start is called before the first frame update
+    public Transform[] waypoints;
+    int waypointIndex;
+    Vector3 target;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        UpdateDestination();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        agent.destination = player.position;
+       if(Vector3.Distance(transform.position, target) < 1)
+        {
+            IterateWaypointIndex();
+            UpdateDestination();
+        } 
+    }
+
+    public void UpdateDestination()
+    {
+        target = waypoints[waypointIndex].position;
+        agent.SetDestination(target);
+    }
+
+    void IterateWaypointIndex()
+    {
+        waypointIndex++;
+        if (waypointIndex == waypoints.Length)
+        {
+            waypointIndex = 0;
+        }
     }
 }
