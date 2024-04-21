@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5732410146289170382}
   - component: {fileID: 3858213724426682930}
   - component: {fileID: 7833712182543278758}
+  - component: {fileID: 8348000380284606261}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -140,7 +141,7 @@ MonoBehaviour:
   _jumpForce: 12
   _jumpCooldown: 0.25
   _airMultiplier: 0.4
-  _sprintValue: 6
+  _sprintValue: 10
   _danceAnimation: {fileID: -203655887218126122, guid: 111e7ca35fd77744d8a300efda266605,
     type: 3}
   _groundLayer:
@@ -161,6 +162,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c181a68b7858a6f4d9eda803f045a800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8348000380284606261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318745916247016702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b0a6c0afc05d44b8c0ee5c7e35a763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthDisplay: {fileID: 0}
 --- !u!1 &4991215246154493338
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4259715946876692866}
+  - component: {fileID: 3898077161931101508}
   m_Layer: 0
   m_Name: Ground Check
   m_TagString: Untagged
@@ -192,6 +208,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2415133480094871874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3898077161931101508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991215246154493338}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5046341, y: 0.17767584, z: 0.43518823}
+  m_Center: {x: -0.029540211, y: 0.03850156, z: 0.07544926}
 --- !u!1 &8480402624057609356
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 8480402624057609356}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -258,9 +295,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  field of view: 50
+  orthographic: 1
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -288,18 +325,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RenderShadows: 0
+  m_RequiresDepthTextureOption: 0
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
